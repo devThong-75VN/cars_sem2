@@ -1,0 +1,33 @@
+.main-contact {
+    background-color: #F9B701;
+    margin-bottom: 5px;
+}
+
+.main-title-contact {
+    text-align: center;
+    padding-top:15px
+}
+.main-title-contact h1{
+    color: #ffff;
+}
+.text-contact {
+    color: #3c5bfc;
+    text-align: center;
+}
+.contact-info .col-md-3:hover{
+    transform: scale(1.1);
+}
+
+.contact-info i {
+    font-size: 24px;
+    padding: 15px;
+    color: #535353;
+}
+
+textarea {
+    width: 100%;
+}
+
+.main-contact iframe{
+    padding: 10px 5px 20px;
+}
