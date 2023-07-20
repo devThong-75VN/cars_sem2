@@ -1,6 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +52,9 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+route::resource('users', UserController::class);
+route::resource('categories', CategoryController::class);
+route::resource('products', ProductController::class);
+route::resource('orders', OrderController::class);
+route::resource('orderitems', OrderItemController::class);
