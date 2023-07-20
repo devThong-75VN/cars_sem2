@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title','product')
+@section('title','contact')
 @section('content')
 <div class="main-contact" ng-controller="ContactController">
         <div class="container">

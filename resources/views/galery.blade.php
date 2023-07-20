@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title','product')
+@section('title','galery')
 @section('content')
 <div class="main-gallery" ng-controller="GalleryController">
 
