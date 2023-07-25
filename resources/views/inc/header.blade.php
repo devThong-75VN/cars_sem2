@@ -37,11 +37,11 @@
                     <div class="col-md-10 ">
                         <div class="header-menu-2">
                             <ul>
-                                <li><a class="homeover" href="#/!">HOME </a></li>
-                                <li><a href="#!product">PRODUCT </a></li>
-                                <li><a href="#!gallery">GALLERRY </a></li>
-                                <li><a href="#!sitemap">SITEMAP </a></li>
-                                <li><a href="#!contact">CONTACT US </a></li>
+                                <li><a class="homeover" href="{{route('home')}}">HOME </a></li>
+                                <li><a href="{{route('shop')}}">SHOP </a></li>
+                                <li><a href="gallery">GALLERRY </a></li>
+                                <li><a href="sitemap">SITEMAP </a></li>
+                                <li><a href="contact">CONTACT US </a></li>
                                 <li><a href="#!about">ABOUT US </a></li>
                             </ul>
                         </div>

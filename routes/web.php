@@ -4,9 +4,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,25 +22,30 @@ use App\Http\Controllers\OrderItemController;
 |
 */
 
-Route::get('/home', function () 
-{
-    return view('home');
-})->name('home'); 
-// ->name('home') co nghia la dat duong dan /home co ten la home
 
-Route::get('/product', function () {
-    return view('product');
-});
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+
+/**
+ * Cart
+ */
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
+
 
 Route::get('/sitemap', function () {
     return view('sitemap');
 });
-
+Route::get('/product', function () {
+    return view('product');
+});
 Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/galery', function () {
+Route::get('/gallery', function () {
     return view('galery');
 });
 
@@ -53,8 +61,5 @@ Route::get('/register', function () {
     return view('register');
 });
 
-route::resource('users', UserController::class);
-route::resource('categories', CategoryController::class);
-route::resource('products', ProductController::class);
-route::resource('orders', OrderController::class);
-route::resource('orderitems', OrderItemController::class);
+Route::get('/',[HomeController::class, 'index'])->name('home');
+
