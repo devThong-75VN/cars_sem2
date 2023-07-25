@@ -21,21 +21,19 @@
                         <source src="{{ url('/img/videobanner.mp4')}}" type="video/mp4">
                     </video>
                     <div class="carousel-caption text-banner">
-                        <p class="banner-tittle"  data-aos="fade-up" data-aos-duration="2500" >WELCOME YOU CARBREEZY</p>
-                        <p class="banner-tittle-2" data-aos="fade-down" data-aos-duration="2500">OWN YOUR DREAM CAR</p>
+                        <p class="banner-tittle">WELCOME YOU CARBREEZY</p>
+                        <p class="banner-tittle-2">OWN YOUR DREAM CAR</p>
                         <br><br><br><br>
-                        <a href="" class="buynow"><button class="btn" data-aos="fade-left"
-                                data-aos-duration="2500">BUY NOW</button></a>
-                        <a href="" class="getstart"><button class="btn" data-aos="fade-right"
-                                data-aos-duration="2500">GET STARTED</button></a>
+                        <a href="" class="buynow"><button class="btn">BUY NOW</button></a>
+                        <a href="" class="getstart"><button class="btn">GET STARTED</button></a>
 
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="{{url ('/img/car-1.jpg')}}" alt="" style="width:100%">
-                    <div class="carousel-caption text-banner" data-aos="fade-up" data-aos-duration="2500">
-                        <p class="banner-tittle" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="5ms">WELCOME YOU CARBREEZY</p>
-                        <p class="banner-tittle-2" data-aos="fade-down" data-aos-duration="2500" data-aos-delay="10000">OWN YOUR DREAM CAR</p>
+                    <img src="{{url('/img/car-1.jpg')}}" alt="" style="width:100%">
+                    <div class="carousel-caption text-banner" >
+                        <p class="banner-tittle">WELCOME YOU CARBREEZY</p>
+                        <p class="banner-tittle-2">OWN YOUR DREAM CAR</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -61,8 +59,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6" id="wc-amina">
-                    <div class="welcome-content" style="position: relative" data-aos="fade-right" data-aos-duration="2800">
-                        <canvas id="canvas2" data-aos="fade-right" data-aos-duration="2800">    
+                    <div class="welcome-content" >
+                        <canvas id="canvas2">    
                         </canvas>
                         <h1 style="position: relative;"><span>WELCOME</span> TO CAR BREEZY</h1>
                         <p>If you would like to import your car from overseas, please note that you will be required to
@@ -87,8 +85,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="img" data-aos="fade-left" data-aos-duration="2800">
-                        <img src="{{url('/img/welcome-7.jpg.png')}}" alt="" width="100%">
+                    <div class="img" >
+                        <img src="{{url('/img/welcome-7.png')}}" alt="" width="100%">
                     </div>
                 </div>
             </div>
@@ -97,7 +95,7 @@
     <div class="featured" style="position: relative">
         
         <div class="featured-title" style="position: relative;">
-            <canvas id="canvas3" data-aos="fade-right" data-aos-duration="2800">    
+            <canvas id="canvas3">    
             </canvas>
             <h1 style="position: relative;"><span>FEATURED</span> PRODUCT</h1>
             <ul class="featured-brand">
@@ -119,32 +117,34 @@
             
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3" ng-repeat="car in cars | filter:{Brand: brand}">
-                        <div class="ft-item" data-aos="fade-up" data-aos-duration="2500">
+                    @foreach($productList as $product)
+                    <div class="col-md-3">
+                        <div class="ft-item" >
                             <div class="ft-item-img effect-quickview">
-                                <img src="" alt="">
+                                <img src="{{url('/img/car-4.2.jpg')}}" alt="">
                                 <figcaption>
                                     <h3>DETAIL</h3>
                                 </figcaption>
-                                <a href="#!product" class="detail"></a>
+                                <a href="{{ route('product', $product->id) }}" class="detail"></a>
                                 
                             </div>
                             <div class="ft-item-inf">
-                                <h5>car.Model</h5>
-                                <h6>car.Category/car.km</h6>
+                                <h5>{{ $product->name }}</h5>
+                                <h6>{{ $product->price }}</h6>
                                 <div class="con-ft-item">
                                     <ul>
-                                        <li><span>Category</span>
-                                            <span>Year</span>
+                                        <li><span>{{ $product->slug }}</span>
+                                            <span>{{ $product->year }}</span>
                                         </li>
-                                        <li><span>Km</span>
-                                            <span>Tranmission</span>
+                                        <li><span>{{ $product->quantity }}</span>
+                                            <span>{{ $product->category_id }}</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
 
