@@ -29,21 +29,56 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     $product = Product::findOrFail($request->productId);
+
+    //     $order = array(
+    //         'productId' => $product->id,
+    //         'productName' => $product->name,
+    //         'productPrice' => $product->price,
+    //         'quantity' => $request->quantity
+    //     );
+
+    //     $request->session()->push('cart', $order);
+
+    //     return redirect()->route('cart.index');
+    // }
+
     public function store(Request $request)
     {
-        $product = Product::findOrFail($request->productId);
+        $productId = $request->productId;
+        $product = Product::findOrFail($productId);
+        $quantity = $request->quantity;
 
-        $order = array(
-            'productId' => $product->id,
-            'productName' => $product->name,
-            'productPrice' => $product->price,
-            'quantity' => $request->quantity
-        );
+        $cart = $request->session()->get('cart', []);
 
-        $request->session()->push('cart', $order);
+        // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
+        $productExists = false;
+        foreach ($cart as $key => $item) {
+            if ($item['productId'] == $productId) {
+                $cart[$key]['quantity'] += $quantity;
+                $productExists = true;
+                break;
+            }
+        }
+
+        // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm mới vào giỏ
+        if (!$productExists) {
+            $order = [
+                'productId' => $product->id,
+                'productName' => $product->name,
+                'productPrice' => $product->price,
+                'quantity' => $quantity
+            ];
+            $cart[] = $order;
+        }
+
+        $request->session()->put('cart', $cart);
 
         return redirect()->route('cart.index');
     }
+
 
     /**
      * Display the specified resource.
