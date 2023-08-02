@@ -3,6 +3,9 @@
 @section('title','Shopping Cart')
 @section('content')
 <div class="container">
+    @if(Session::has('message'))
+    <p class="alert alert-info">{{ Session::get('message') }}</p>
+    @endif
     <div class="row">
         <h4 class="heading">Shopping Bag</h4>
         <table class="table">
@@ -37,7 +40,7 @@
                             <input onchange="this.form.submit()" type="number" value="{{ $order['quantity'] }}" class="text" min="1" max="10" name="quantity">
                         </form>
                     </td>
-                    <td>{{ $order['productPrice'] * $order['quantity'] }}</td>
+                    <td>{{ order_item_total($order['productPrice'], $order['quantity']) }}</td>
                     <td>
                         <form action="{{ route('cart.delete', $order['productId'] ) }}" method="post">
                             @csrf
@@ -58,11 +61,11 @@
             <p class="mb-1 ">Total (tax included)</p>
         </div>
         <div class="col-3">
-            <h6 class="mb-1 text-right">$23.49</h6>
+            <h6 class="mb-1 text-right">{{ cart_total($cart) }}</h6>
             <h6 class="mb-1 text-right">$2.99</h6>
-            <h6 class="mb-1 text-right">$2.99</h6>
+            <h6 class="mb-1 text-right">${{ cart_total($cart, 100) }}</h6>
         </div>
-        <input class=" btn btn-outline-success" type="submit" value="Checkout-$26.48">
+        <a href="{{ route('checkout') }}" class="btn btn-outline-success">Checkout</a>
     </div>
 </div>
 @endsection
