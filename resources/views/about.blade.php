@@ -98,7 +98,7 @@
                     </li>
                     <li>
                         <h4>500</h4>
-                        <p>CONECTION</p>
+                        <p>CONECTIONsdsadfasdfasdfasdfasdfasdfasdffasdfasdf</p>
                     </li>
                 </ul>
 

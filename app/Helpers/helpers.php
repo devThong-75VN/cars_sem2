@@ -22,3 +22,8 @@ function random_string($length = 8){
     }
     return $randomString;
 }
+
+function format_money($number)
+{
+    return number_format($number, 2, ".", ",") . "đ";
+}

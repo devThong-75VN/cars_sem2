@@ -65,7 +65,7 @@
                         <h1 style="position: relative;"><span>WELCOME</span> TO CAR BREEZY</h1>
                         <p>If you would like to import your car from overseas, please note that you will be required to
                             provide the relevant government agencies with the correct documentation for your car and to
-                            register it once it arrives in the UK. It will also need to meet local vehicle compliance
+                            register it once it arrives in the sdfasdfasdfUK. It will also need to meet local vehicle compliance
                             standards and have insurance arranged for it. </p>
                         <ul>
                             <li>
