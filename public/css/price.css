@@ -1,0 +1,16 @@
+
+.old-price {
+    padding-left: 15px;
+    text-decoration-line: line-through;
+    font-family: 'Open Sans', sans-serif;
+    color: #b7e83a;
+    font-weight: 600;
+}
+
+.new-price {
+    padding-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-left: 5px;
+    color: #f57328;
+}

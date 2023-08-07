@@ -107,21 +107,6 @@ h4 {
     margin: 0 0 20px;
 }
 
-.old-price {
-    padding-left: 15px;
-    text-decoration-line: line-through;
-    font-family: 'Open Sans', sans-serif;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.new-price {
-    padding-left: 15px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    margin-left: 5px;
-    color: #f57328;
-}
 
 li {
     list-style-type: none;
@@ -218,4 +203,9 @@ button {
     top: 6em;
     left: 44.3em;
     border-radius: 1.5em;
+}
+
+
+.img-product{
+    width: 100%; height: 400px;
 }

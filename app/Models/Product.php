@@ -13,4 +13,12 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    //Updated slug thêm id
+    protected static function booted()
+    {
+        static::created(function ($product) {
+            $product->slug = sprintf("%s-%s", $product->slug, $product->id);
+            $product->save();
+        });
+    }
 }

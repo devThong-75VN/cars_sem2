@@ -63,8 +63,8 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/',[HomeController::class, 'index'])->name('home');
-Route::get('/checkout',[CheckoutController::class, 'checkout'])->name('checkout');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -76,6 +76,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-Route::get('/search',[SearchController::class,'show'])->name('search.show');
+Route::get('/search', [SearchController::class, 'show'])->name('search.show');
+Route::get('/product/{slug}.html', [ProductController::class, 'show'])->name('product.show');
+
+Route::middleware('admin')->prefix('admin')->group(function () {
+    Route::get('dashboard', function () {
+        return "Hello World";
+    });
+});
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
