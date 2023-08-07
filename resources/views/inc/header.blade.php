@@ -36,8 +36,7 @@
                 </div>
                 <div class="col-md-3">
                     <form action="{{route('search.show')}}" method="get">
-                        <input type="text" name="key" class="form-control">
-                        <button class="btn"> search</button>
+                        <input type="text" name="key" class="form-control" placeholder="Search Cars">
                     </form>
                 </div>
                 <div class="col-md-7 ">

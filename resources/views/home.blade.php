@@ -125,7 +125,7 @@
                                 <figcaption>
                                     <h3>DETAIL</h3>
                                 </figcaption>
-                                <a href="{{ route('product', $product->id) }}" class="detail"></a>
+                                <a href="{{ route('product.show', $product->slug) }}" class="detail"></a>
                                 
                             </div>
                             <div class="ft-item-inf">

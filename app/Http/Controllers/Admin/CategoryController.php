@@ -1,22 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Product;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //Lay ra id, name, password trong bang user
-        return Product::select('id','name','description','slug','price','quantity','transmission','fueltype','year','category_id')->get();
-        //Lay ra het info trong bang Product
-        // return Product::all();
-
+        //
     }
 
     /**
@@ -32,22 +28,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request; de vo dong nay thi bo loi
-        return Product::create($request->all());
-       
-
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $slug)
+    public function show(string $id)
     {
-        $splits = explode('-', $slug);
-        $id = array_pop($splits);
-
-        $product = Product::findOrFail($id);
-        return view('product', compact('product'));
+        //
     }
 
     /**
@@ -63,7 +52,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Product::findOrFail($id)->update($request);
+        //
     }
 
     /**
@@ -71,6 +60,6 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        Product::findOrFail($id)->destroy();
+        //
     }
 }
