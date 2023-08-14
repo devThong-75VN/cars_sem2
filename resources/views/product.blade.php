@@ -66,40 +66,47 @@
                     <p class="title">{{ $product->description }}</p>
                 </div>
             </form>
-            <!-- <form action="{{ route('cart.update', [ $product->id]) }}" method="post">
-            @method('put')
-            @csrf
-            <input type="hidden" name="productId" value="{{ $product->id }}">
-            <h1>{{ $product->name }}</h1>
-            <div class="price ng">
-                <div><span class="price-new">Price: {{ $product->price }}</span></div>
-                <span>Mã SP: {{ $product->slug }}</span>
-            </div>
-            <div class="quantity">
-                <label>Số lượng</label>
-                <div class="quantity-input">
-                    <input type="number" value="1" class="text" min="1" max="10" name="quantity">
-                </div>
-            </div>
-            <div class="button">
-                <button type="submit">sửa giỏ hàng</button>
-            </div>
-            <div class="call">
-                <p class="title">Để lại số điện thoại, chúng tôi sẽ tư vấn ngay</p>
-                <div class="input">
-                    <div class="input-group">
-                        <input class="form-control" type="text">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button"><i class="fa fa-phone"></i> Gọi lại cho tôi</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </form> -->
 
         </div>
     </div>
 
+</div>
+
+<div class="container py-4 my-4 mx-auto d-flex flex-column">
+    <div class="header">
+        <div class="row r1">
+            <div class="col-md-9 abc">
+                <h1>Tyre Mountain Cycle 21</h1>
+            </div>
+            <div class="col-md-3 text-right pqr"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+            <p class="text-right para">Based on 250 Review</p>
+        </div>
+    </div>
+    <div class="container-body mt-4">
+        <div class="row r3">
+            <div class="col-md-5 p-0 klo">
+                <ul>
+                    <li>100% Quality</li>
+                    <li>Free Shipping</li>
+                    <li>Easy Returns</li>
+                    <li>12 Months Warranty</li>
+                    <li>EMI Starting from (On Credit Cards)</li>
+                    <li>Normal Delivery : 4-5 Days</li>
+                    <li>Express Delivery : 2-3 Days</li>
+                    <li>COD Available (All Over India)</li>
+                </ul>
+            </div>
+            <div class="col-md-7"> <img src="{{ url('/img/car-9.jpg') }}"> </div>
+        </div>
+    </div>
+    <div class="footer d-flex flex-column mt-5">
+        <div class="row r4">
+            <div class="col-md-2 myt des"><a href="#">Description</a></div>
+            <div class="col-md-2 myt "><a href="#">Review</a></div>
+            <div class="col-md-2 mio offset-md-4"><a href="#">ADD TO CART</a></div>
+            <div class="col-md-2 myt "><button type="button" class="btn btn-outline-warning"><a href="#">BUY NOW</a></button></div>
+        </div>
+    </div>
 </div>
 
 @endsection

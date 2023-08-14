@@ -15,6 +15,6 @@ class DashboardController extends Controller
         }
 
         // Xử lý các tác vụ liên quan đến trang dashboard và trả về view dashboard.blade.php
-        return view('dashboard');
+        return view('admin.dashboard');
     }
 }

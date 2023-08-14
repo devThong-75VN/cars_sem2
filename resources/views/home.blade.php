@@ -2,7 +2,7 @@
 
 @section('title','home')
 @section('content')
-<div class="main" ng-controller="HomeController" >
+<div class="main" >
     <div class="slideshow-banner">
         <!-- Carousel -->
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
