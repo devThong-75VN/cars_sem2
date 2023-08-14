@@ -15,23 +15,23 @@ class CheckAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    // {
-    //     if (Auth::user()) {
-    //         $user = Auth::user();
-    //         if ($user->role == "admin") {
-    //             return $next($request);
-    //         } else {
-    //             return redirect()->route('home.index');
-    //         }
-    //     } else {
-    //         return redirect()->route('login');
-    //     }
-    //     return redirect()->route('403');
-    // }
     {
-        if (auth()->check() && auth()->user()->role !== 'admin') {
-            return redirect()->route('home.index');
+        if (Auth::user()) {
+            $user = Auth::user();
+            if ($user->role == "admin") {
+                return $next($request);
+            } else {
+                return redirect()->route('home');
+            }
+        } else {
+            return redirect()->route('login');
         }
-        return $next($request);
+        return redirect()->route('403');
     }
+    // {
+    //     if (auth()->check() && auth()->user()->role !== 'admin') {
+    //         return redirect()->route('home');
+    //     }
+    //     return $next($request);
+    // }
 }

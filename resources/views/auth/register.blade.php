@@ -1,7 +1,8 @@
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
+        <!-- Gui gia tri role -->
+        <input type="hidden" name="role" value="admin">
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />

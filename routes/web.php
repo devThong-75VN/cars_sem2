@@ -12,6 +12,8 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SearchController;
+// use App\Http\Controllers\Admin\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,9 +57,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
 Route::get('/register', function () {
     return view('register');
@@ -66,9 +68,9 @@ Route::get('/register', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -81,11 +83,15 @@ require __DIR__ . '/auth.php';
 Route::get('/search', [SearchController::class, 'show'])->name('search.show');
 Route::get('/product/{slug}.html', [ProductController::class, 'show'])->name('product.show');
 
-Route::middleware('admin')->prefix('admin')->group(function () {
-    Route::get('dashboard', function () {
-        return "Hello World";
-    });
-});
-Route::group(['middleware' => ['admin']], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// Route::group(['middleware' => ['admin']], function () {
+//     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// });
+
+Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
+
+    Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('orders',\App\Http\Controllers\Admin\OrderController::class);
 });

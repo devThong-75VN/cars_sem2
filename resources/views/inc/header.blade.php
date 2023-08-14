@@ -6,6 +6,7 @@
                 <ul class="header-info-1">
                     <li><i class="fa-solid fa-phone"></i>(+84)941346669</li>
                     <li><i class="fa-sharp fa-regular fa-envelope"></i> abc@gmail.com</li>
+                    
                 </ul>
             </div>
             <div class="col-md-8">
@@ -17,10 +18,15 @@
                     <li><i class="fa-brands fa-skype"></i></li>
                     <li><i class="fa-brands fa-instagram"></i></li>
                     <li>
-                        <a href="#!login" id="login">Login</a> <a href="#!register" id="login">Register</a>
+                        <a href="{{route('login')}}" id="login">Login</a> <a href="{{route('register')}}" id="login">Register</a>
                     </li>
                     <li id="backtop1">
                         <i class="fa fa-user"> <span class="visit">Visitor Number: </span> <span id="count"></span></i>
+                    </li>
+                    <li>
+                        @if (auth()->check())
+                        <p>Hello {{ Auth::user()->name }}</p>
+                        @endif
                     </li>
                 </ul>
             </div>
