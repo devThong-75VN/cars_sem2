@@ -38,7 +38,7 @@
 
                                 <li>
                                     <div class="recent-item">
-                                        <img src="./assets/img/banner-2.jpg" alt="Audi S5" width="50%">
+                                        <img src="{{ url('img/banner-2.jpg') }}" alt="Audi S5" width="50%">
                                         <div class="recent-item-info">
                                             <h5 class="car-name">2016 Audi S5 Coupe</h5>
                                             <span class="date-time">February 27, 2022</span>
@@ -48,7 +48,7 @@
                                 </li>
                                 <li>
                                     <div class="recent-item">
-                                        <img src="./assets/img/banner-3.jpg" alt="Audi S5" width="50%">
+                                        <img src="{{ url('img/banner-3.jpg') }}" alt="Audi S5" width="50%">
                                         <div class="recent-item-info">
                                             <h5 class="car-name">2016 Audi R8</h5>
                                             <span class="date-time">February 27, 2022</span>
@@ -58,7 +58,7 @@
                                 </li>
                                 <li>
                                     <div class="recent-item">
-                                        <img src="./assets/img/banner-2.jpg" alt="Audi S5" width="50%">
+                                        <img src="{{ url('img/banner-2.jpg') }}" alt="Audi S5" width="50%">
                                         <div class="recent-item-info">
                                             <h5 class="car-name">Read Audi A7 TDI</h5>
                                             <span class="date-time">February 27, 2022</span>

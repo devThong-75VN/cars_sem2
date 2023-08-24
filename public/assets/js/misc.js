@@ -72,6 +72,7 @@
     }
 
     $('[data-toggle="minimize"]').on("click", function() {
+      console.log("Nhap duọc")
       if ((body.hasClass('sidebar-toggle-display')) || (body.hasClass('sidebar-absolute'))) {
         body.toggleClass('sidebar-hidden');
       } else {

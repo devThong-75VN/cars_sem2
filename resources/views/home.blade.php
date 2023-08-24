@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title','home')
+@section('title','Breezy Cars')
 @section('content')
 <div class="main" >
     <div class="slideshow-banner">
