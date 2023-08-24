@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class ProductController extends Controller
 {
@@ -22,16 +24,17 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categoryList = Category::all();
+        return view('admin.products.create', compact('categoryList'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   
         $product = Product::create($request->only([
-            'name', 'desc', 'quantity','slug','price','tranmission','fueltype','year','category_id'
+            'name', 'description', 'quantity', 'price', 'transmission', 'fueltype', 'year', 'category_id'
         ]));
         $message = "Success Created";
         if ($product == null) {
@@ -64,7 +67,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $bool = $product->update($request->only([
-            'name', 'desc', 'quantity','slug','price','tranmission','fueltype','year','category_id'
+            'name', 'desc', 'quantity', 'slug', 'price', 'tranmission', 'fueltype', 'year', 'category_id'
         ]));
 
         $message =  "Success  Update";

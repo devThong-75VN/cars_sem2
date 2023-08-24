@@ -1,112 +1,256 @@
 @extends('master')
 
-@section('title','product')
+@section('title', $product->year. ' ' .$product->name )
 @section('content')
+<style>
+    .shop-productdetail {
+        background: #8D9AF8;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        position: relative;
+    }
 
-<div class="container">
-    <div class="row">
-        <h2>{{ $product->year }} {{ $product->name }}</h2>
-    </div>
-    <div class="row">
-        <div class="col-6 ">
-            <!-- <img height="auto" width="50px" src="{{url('./img/car-4c.jpg')}}" alt=""> -->
-            <div class="container mt-4">
-                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{url('./img/car-4c.jpg')}}" class="d-block w-100 img-product" alt="Image 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{url('./img/car-4c.jpg')}}" class="d-block w-100 img-product" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{url('./img/car-4c.jpg')}}" class="d-block w-100 img-product" alt="Image 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{url('./img/car-4c.jpg')}}" class="d-block w-100 img-product" alt="Image 4">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{url('./img/car-4c.jpg')}}" class="d-block w-100 img-product" alt="Image 5">
+    .macBookPro-1 {
+        background: #FAFBFC;
+        border-radius: 28px;
+        overflow: hidden;
+        height: 750px;
+    }
+
+    .backtoshop {
+        color: #6F768D;
+        font-family: Manrope;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 15px;
+        /* 125% */
+        letter-spacing: 0.24px;
+        padding-left: "30px";
+    }
+
+    .frame {
+        margin-left: 0px;
+        width: 100%;
+        height: 500px;
+        padding-top: 20px;
+        background-image: url('/img/car-3.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 28px;
+    }
+
+    label.hotdeal {
+        display: inline-flex;
+        padding: 2px 6px;
+        align-items: flex-start;
+        gap: 10px;
+        border-radius: 4px;
+        background: var(--red, #F12B2C);
+    }
+
+    p.hotdeal {
+        color: var(--primary-grey-6, #FFF);
+        font-family: Manrope;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.72px;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+    }
+
+    p.shopproductname {
+        width: 100%;
+        color: #000;
+        font-family: Manrope;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    p.shopproductcategory {
+        color: #50CC98;
+        font-family: Manrope;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 15px;
+        /* 125% */
+        letter-spacing: 1.98px;
+        text-transform: uppercase;
+    }
+
+    .description {
+        color: #000;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 15px;
+        /* 125% */
+        letter-spacing: 0.24px;
+    }
+
+    .content-description {
+        width: 418px;
+        color: #000;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 177.994%;
+        /* 21.359px */
+        letter-spacing: 0.24px;
+    }
+
+    table {
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        padding-top: 30px;
+    }
+
+    .addtocart {
+        position: absolute;
+        left: 200px;
+        top: 710px;
+        display: flex;
+        width: 1200px;
+        height: 83px;
+        padding: 20px;
+        margin-left: 30px;
+        align-items: center;
+        gap: 18px;
+        flex-shrink: 0;
+        border-radius: 14px;
+        background: #FFF;
+        box-shadow: 0px 2px 30px 0px rgba(53, 56, 90, 0.12);
+    }
+
+    .addtocart img {
+        width: 68px;
+        height: 65px;
+        border-radius: 8px;
+        background: url('/img/car-3.jpeg'), lightgray 100% / cover no-repeat;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .shopproductname2 {
+        width: 369px;
+        color: #000;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0px;
+        
+        letter-spacing: 3px;
+    }
+
+    .shopproductcategory2 {
+        color: #50CC98;
+        font-family: Manrope;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 15px;
+        /* 150% */
+        letter-spacing: 5px;
+        margin: 0px;
+    }
+
+    .addtocart div {
+        width: 550px;
+    }
+
+    .quantity-input {
+        width: 50px;
+    }
+
+    .button-product {
+        display: flex;
+        width: 173px;
+        height: 42px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        background: #828EF9;
+    }
+</style>
+<form action="{{ route('cart.store') }}" method="post">
+<input type="hidden" name="productId" value="{{ $product->id }}">
+    <div class="shop-productdetail">
+        <div class="container">
+            <div class="row macBookPro-1">
+                <div class="col-md-6" style="padding: 50px; background: #E3E5FA; ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                        <path d="M9.5 6.5H2.5" stroke="#6F768D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6 10L2.5 6.5L6 3" stroke="#6F768D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="backtoshop">back to shop</p>
+                    <div class="frame">
+                    </div>
+
+                </div>
+
+                <div class="col-md-6" style="padding: 80px;">
+                    @csrf
+                    <label for="" class="hotdeal">
+                        <p class="hotdeal">HOTDEAL</p>
+                    </label>
+                    <p class="shopproductname">{{ $product->name }}</p>
+                    <p class="shopproductcategory">{{ $product->category_id }} | {{ $product->slug }}</p>
+                    <div class="price">
+                        <div>
+                            <span class="old-price">&dollar;car.PriceOld</span>
+                            <span class="new-price">&dollar;{{ $product->price }}.000</span>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Fuel Type</th>
+                                <th>Diesel Oil</th>
+                            </tr>
+                            <tr>
+                                <th>Tranmission</th>
+                                <th>Auto Manual</th>
+                            </tr>
+                            <tr>
+                                <th>Year Manufactor</th>
+                                <th>{{ $product->year }}</th>
+                            </tr>
+                        </tbody>
+                    </table>
 
-        </div>
-        <div class="col-md-6">
-            <form action="{{ route('cart.store') }}" method="post">
-                @csrf
-                <input type="hidden" name="productId" value="{{ $product->id }}">
-                <h1>{{ $product->name }}</h1>
-                <div class="price">
+                    <p class="description">Description</p>
+                    <div class="content-description">
+                        {{ $product->description }}
+                    </div>
+                </div>
+
+                <div class="addtocart">
+                    <img>
                     <div>
-                        <span class="old-price">&dollar;car.PriceOld</span>
-                        <span class="new-price">&dollar;{{ $product->price }}</span>
+                        <p class="shopproductname2">{{ $product->name }}</p>
+                        <p class="shopproductcategory2">{{ $product->slug }}</p>
                     </div>
-                    <span>Mã SP: {{ $product->slug }}</span>
+                    <input class="quantity-input" type="number" value="1" class="text" min="1" max="10" name="quantity">
+                    <button class="button-product" type="submit">ADD TO CART</button>
                 </div>
-                <div class="quantity">
-                    <label>Số lượng</label>
-                    <div class="quantity-input">
-                        <input type="number" value="1" class="text" min="1" max="10" name="quantity">
-                    </div>
-                </div>
-                <div class="button">
-                    <button type="submit">Thêm giỏ hàng</button>
-                </div>
-                <div class="call">
-                    <p class="title">{{ $product->description }}</p>
-                </div>
-            </form>
-
-        </div>
-    </div>
-
-</div>
-
-<div class="container py-4 my-4 mx-auto d-flex flex-column">
-    <div class="header">
-        <div class="row r1">
-            <div class="col-md-9 abc">
-                <h1>Tyre Mountain Cycle 21</h1>
             </div>
-            <div class="col-md-3 text-right pqr"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-            <p class="text-right para">Based on 250 Review</p>
         </div>
     </div>
-    <div class="container-body mt-4">
-        <div class="row r3">
-            <div class="col-md-5 p-0 klo">
-                <ul>
-                    <li>100% Quality</li>
-                    <li>Free Shipping</li>
-                    <li>Easy Returns</li>
-                    <li>12 Months Warranty</li>
-                    <li>EMI Starting from (On Credit Cards)</li>
-                    <li>Normal Delivery : 4-5 Days</li>
-                    <li>Express Delivery : 2-3 Days</li>
-                    <li>COD Available (All Over India)</li>
-                </ul>
-            </div>
-            <div class="col-md-7"> <img src="{{ url('/img/car-9.jpg') }}"> </div>
-        </div>
-    </div>
-    <div class="footer d-flex flex-column mt-5">
-        <div class="row r4">
-            <div class="col-md-2 myt des"><a href="#">Description</a></div>
-            <div class="col-md-2 myt "><a href="#">Review</a></div>
-            <div class="col-md-2 mio offset-md-4"><a href="#">ADD TO CART</a></div>
-            <div class="col-md-2 myt "><button type="button" class="btn btn-outline-warning"><a href="#">BUY NOW</a></button></div>
-        </div>
-    </div>
-</div>
+</form>
 
 @endsection

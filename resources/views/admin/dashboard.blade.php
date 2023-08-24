@@ -180,7 +180,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/faces/face1.jpg" alt="image" />
+                                                <img src="{{ url('assets/images/faces/face10.jpg') }}" alt="image" />
                                                 <div class="table-user-name ml-3">
                                                     <p class="mb-0 font-weight-medium"> Cecelia Cooper </p>
                                                     <small> Payment on hold</small>
@@ -196,7 +196,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/faces/face10.jpg" alt="image" />
+                                                <img src="{{ url('assets/images/faces/face10.jpg') }}" alt="image" />
                                                 <div class="table-user-name ml-3">
                                                     <p class="mb-0 font-weight-medium"> Victor Watkins </p>
                                                     <small>Email verified</small>
@@ -212,7 +212,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/faces/face11.jpg" alt="image" />
+                                                <img src="{{ url('assets/images/faces/face11.jpg') }}" alt="image" />
                                                 <div class="table-user-name ml-3">
                                                     <p class="mb-0 font-weight-medium"> Ada Burgess </p>
                                                     <small>Email verified</small>
@@ -228,7 +228,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/faces/face13.jpg" alt="image" />
+                                                <img src="{{ url('assets/images/faces/face13.jpg') }}" alt="image" />
                                                 <div class="table-user-name ml-3">
                                                     <p class="mb-0 font-weight-medium"> Dollie Lynch </p>
                                                     <small>Email verified</small>
@@ -244,7 +244,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/faces/face16.jpg" alt="image" />
+                                                <img src="{{ url('assets/images/faces/face16.jpg') }}" alt="image" />
                                                 <div class="table-user-name ml-3">
                                                     <p class="mb-0 font-weight-medium"> Harry Holloway </p>
                                                     <small>Payment on process</small>
@@ -272,7 +272,7 @@
                         <div class="card-title font-weight-medium"> Business Survey </div>
                         <p class="text-muted"> Lorem ipsum dolor sitadipiscing elit, sed amet do eiusmod tempor we find a new solution </p>
                         <div class="d-flex flex-wrap border-bottom py-2 border-top justify-content-between">
-                            <img class="survey-img mb-lg-3" src="assets/images/dashboard/img_3.jpg" alt="" />
+                            <img class="survey-img mb-lg-3" src="{{ url('assets/images/dashboard/img_3.jpg') }}" alt="" />
                             <div class="pt-2">
                                 <h5 class="mb-0">Villa called Archagel</h5>
                                 <p class="mb-0 text-muted">St, San Diego, CA</p>
@@ -280,7 +280,7 @@
                             </div>
                         </div>
                         <div class="d-flex flex-wrap border-bottom py-2 justify-content-between">
-                            <img class="survey-img mb-lg-3" src="assets/images/dashboard/img_1.jpg" alt="" />
+                            <img class="survey-img mb-lg-3" src="{{ url('assets/images/dashboard/img_1.jpg') }}" alt="" />
                             <div class="pt-2">
                                 <h5 class="mb-0">Luxury villa in Hermo</h5>
                                 <p class="mb-0 text-muted">Glendale, CA</p>
@@ -288,7 +288,7 @@
                             </div>
                         </div>
                         <div class="d-flex flex-wrap border-bottom py-2 justify-content-between">
-                            <img class="survey-img mb-lg-3" src="assets/images/dashboard/img_2.jpg" alt="" />
+                            <img class="survey-img mb-lg-3" src="{{ url('assets/images/dashboard/img_2.jpg') }}" alt="" />
                             <div class="pt-2">
                                 <h5 class="mb-0">House on the Clarita</h5>
                                 <p class="mb-0 text-muted">Business Survey</p>

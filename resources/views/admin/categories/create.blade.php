@@ -15,10 +15,20 @@
                                 {{ csrf_field() }}
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        @if($errors->has('name'))
+                                        @foreach($errors->get('name') as $message)
+                                        <span>{{ $message }}</span><br>
+                                        @endforeach
+                                        @endif
                                         <input type="text" name="name" class="form-control form-control-user" id="" placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    @if($errors->has('desc'))
+                                    @foreach($errors->get('desc') as $message)
+                                    <span>{{ $message }}</span><br>
+                                    @endforeach
+                                    @endif
                                     <textarea name="desc" id="" class="form-control" cols="30" rows="10" placeholder="Description"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">

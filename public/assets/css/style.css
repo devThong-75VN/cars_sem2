@@ -3305,11 +3305,13 @@ pre {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529; }
+
   .table th,
   .table td {
     padding: 0.9375rem;
     vertical-align: top;
-    border-top: 1px solid #ebedf2; }
+    border-top: 1px solid #ebedf2;
+    white-space:wrap;}
   .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #ebedf2; }
@@ -7594,8 +7596,8 @@ button.bg-dark:focus,
 .settings-panel .color-tiles button.tiles.dark:focus {
   background-color: #29323d !important; }
 
-.bg-white {
-  background-color: #ffffff !important; }
+/* .bg-white {
+  background-color: #ffffff !important; } */
 
 .bg-transparent {
   background-color: transparent !important; }
@@ -10945,7 +10947,7 @@ code {
 /* Footer */
 .footer {
   background: #f2f2f2;
-  padding: 8px 40px 37px 40px;
+  padding: 8px 40px 8px 40px;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   -webkit-transition: all 0.25s ease;
@@ -13313,8 +13315,8 @@ select.tt-hint {
     vertical-align: middle;
     font-size: 0.875rem;
     line-height: 1;
-    white-space: nowrap;
-    padding: 14px 0 14px 25px; }
+    white-space: wrap;
+    padding: 2px 0 2px 2px; }
     .table th img,
     .table td img {
       width: 30px;

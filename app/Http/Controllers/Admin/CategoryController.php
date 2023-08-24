@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\StoreCategoyRequets;
+
+
 
 class CategoryController extends Controller
 {
@@ -30,9 +35,26 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'name.required' => trans('validation.category.required'),
+            'name.min' => trans('validation.category.min'),
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:5',
+            'desc' => 'required',
+        ], $messages);
+
+        if ($validator->fails()) {
+            return redirect()->route('admin.categories.create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
         $category = Category::create($request->only([
             'name', 'desc'
         ]));
+
         $message = "Success Created";
         if ($category == null) {
             $message = "Create  Failed";

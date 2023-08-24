@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
-    <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+    <a class="sidebar-brand brand-logo" href="index.html"><img src="{{ url('assets/images/logo.svg') }}" alt="logo" /></a>
     <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="{{ url('assets/images/logo-mini.svg') }}" alt="logo" /></a>
   </div>
   <ul class="nav">
@@ -25,12 +25,12 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+      <a class="nav-link" data-toggle="collapse"  data-target="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <i class="mdi mdi-crosshairs-gps menu-icon"></i>
         <span class="menu-title">User</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="ui-basic">
+      <div class="collapse" id="ui-basic" >
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.users.index') }}">All</a>

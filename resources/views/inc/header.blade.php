@@ -6,7 +6,7 @@
                 <ul class="header-info-1">
                     <li><i class="fa-solid fa-phone"></i>(+84)941346669</li>
                     <li><i class="fa-sharp fa-regular fa-envelope"></i> abc@gmail.com</li>
-                    
+
                 </ul>
             </div>
             <div class="col-md-8">
@@ -23,10 +23,23 @@
                     <li id="backtop1">
                         <i class="fa fa-user"> <span class="visit">Visitor Number: </span> <span id="count"></span></i>
                     </li>
-                    <li>
-                        @if (auth()->check())
-                        <p>Hello {{ Auth::user()->name }}</p>
-                        @endif
+                    <li class="nav-item  nav-profile dropdown border-0">
+                        <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown">
+                            @if (auth()->check())
+                            <span class="profile-name"> {{ Auth::user()->name }}</span>
+                            @endif
+
+                        </a>
+                        <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
+
+                            <a class="dropdown-item" href="#">
+                                <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+                        </div>
+
+
+                    </li>
                     </li>
                 </ul>
             </div>

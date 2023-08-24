@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="{{ url('assets/vendors/font-awesome/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="{{ url('assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" />
     <link rel="stylesheet" href="{{ url('assets/css/style.css')}}" />
+    <!-- <link rel="stylesheet" href="{{ url('assets/scss/_layouts.scss')}}" />
+    <link rel="stylesheet" href="{{ url('assets/scss/_navbar.scss')}}" />
+    <link rel="stylesheet" href="{{ url('assets/scss/_settings-panel.scss')}}" />
+    <link rel="stylesheet" href="{{ url('assets/scss/_sidebar.scss')}}" />
+    <link rel="stylesheet" href="{{ url('assets/scss/_variables.scss')}}" />
+    <link rel="stylesheet" href="{{ url('assets/scss/style.scss')}}" /> -->
+    <link rel="stylesheet" href="{{ url('assets/css/style.css.map')}}" />
     <link rel="shortcut icon" href="{{ url('assets/images/favicon.png') }}" />
 </head>
 
@@ -28,11 +35,12 @@
     </div>
 
     @include('admin.inc.footer')
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="{{ url('assets/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- Plugin js for this page -->
     <script src="{{ url('assets/vendors/chart.js/Chart.min.js')}}"></script>
+    <!-- <script src="{{ url('assets/vendors/js/bootstrap.min.js.map')}}"></script> -->
     <script src="{{ url('assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{ url('assets/vendors/flot/jquery.flot.js')}}"></script>
     <script src="{{ url('assets/vendors/flot/jquery.flot.resize.js')}}"></script>
@@ -43,8 +51,8 @@
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="{{ url('assets/js/off-canvas.js')}}"></script>
-    <script src="{{ url('assets/js/hoverable-collapse.js')}}"></script>
     <script src="{{ url('assets/js/misc.js')}}"></script>
+    <script src="{{ url('assets/js/hoverable-collapse.js')}}"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{ url('assets/js/dashboard.js')}}"></script>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('slug');
+            $table->string('slug',1024)->nullable();
             $table->double('price');
             $table->integer('quantity');
             $table->string('transmission');
